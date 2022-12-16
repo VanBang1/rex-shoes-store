@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -17,6 +17,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
         <Footer />
+        <MessengerCustomerChat />
 
     </div>
   )
