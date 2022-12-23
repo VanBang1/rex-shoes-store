@@ -27,7 +27,7 @@ const Success = () => {
         <pre> </pre>
         <p className="email-msg">please check your message for the receipt</p>
         <p className="description">
-          If you have any questions, please visit our shop's personal page
+          If you have any questions, please visit our shop is personal page
           <a className="email" href="https://www.facebook.com/TREX2208">
             TREX2208
           </a>
