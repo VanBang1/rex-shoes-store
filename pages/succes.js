@@ -23,11 +23,13 @@ const Success = () => {
           <BsBagCheckFill />
         </p>
         <h2>Thank you for your order!</h2>
-        <p className="email-msg">Check your email inbox for the receipt.</p>
+        <p className="email-msg">When you can scan the QR code, your payment is complete !</p>
+        <pre> </pre>
+        <p className="email-msg">please check your message for the receipt</p>
         <p className="description">
-          If you have any questions, please email
-          <a className="email" href="mailto:order@example.com">
-            order@example.com
+          If you have any questions, please visit our shop's personal page
+          <a className="email" href="https://www.facebook.com/TREX2208">
+            TREX2208
           </a>
         </p>
         <Link href="/">

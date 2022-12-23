@@ -9,13 +9,14 @@ import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
 
 const Cart = () => {
+  let tensp="testsp1";
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
 
   const handleCheckout = async () => {
     const stripe = await getStripe();
 
-    const response = await fetch('/api/success', {
+    const response = await fetch('/succes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -94,12 +95,11 @@ const Cart = () => {
           <div className="cart-bottom">
             <div className="total">
               <h3>Subtotal:</h3>
-              <h3><CurrencyFormat className="product-price" value={totalPrice} displayType="text" thousandSeparator={true} /> <u>vnđ</u></h3>
+              <h3><CurrencyFormat className="product-price" value={totalPrice} displayType="text" thousandSeparator={true} /> <u>vnđ</u></h3>        
+              <img src={"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+tensp+","+totalPrice}  alt="Trulli" width="170" height="170"></img>   
             </div>
             <div className="btn-container">
-              <button type="button" className="btn" onClick={handleCheckout}>
-                Deposit
-              </button>
+              <a href="/succes" class="btn"> BUY </a>
             </div>
           </div>
         )}
@@ -107,5 +107,4 @@ const Cart = () => {
     </div>
   )
 }
-
 export default Cart;

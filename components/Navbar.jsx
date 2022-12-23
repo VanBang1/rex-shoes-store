@@ -21,11 +21,6 @@ const Navbar = () => {
         <span className="cart-item-qty">{totalQuantities}</span>
         </button>
         {showCart && <Cart />}
-        
-        <button type="button" className="cart-icon2" onClick={Login} >
-          <AiOutlineUser />
-        </button>
-
     </div>
   )
 }
