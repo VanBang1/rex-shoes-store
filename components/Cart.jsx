@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'
+
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
 import toast from 'react-hot-toast';
@@ -96,10 +98,18 @@ const Cart = () => {
             <div className="total">
               <h3>Subtotal:</h3>
               <h3><CurrencyFormat className="product-price" value={totalPrice} displayType="text" thousandSeparator={true} /> <u>vnđ</u></h3>        
-              <img src={"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+tensp+","+totalPrice}  alt="Trulli" width="170" height="170"></img>   
+              <Image
+             // src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=test"
+             src="/images/logo.png"
+              alt="Trulli" 
+              width={170}
+              height={170}
+              />
             </div>
             <div className="btn-container">
-              <a href="/succes" class="btn"> BUY </a>
+              <Link href="/succes" class="btn">
+               BUY 
+              </Link>
             </div>
           </div>
         )}
