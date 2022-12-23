@@ -11,10 +11,11 @@ import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
 
 const Cart = () => {
-  let tensp="testsp1";
+ 
+
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
-
+  const src = `${"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=adidas01," + totalPrice}`;
   const handleCheckout = async () => {
     const stripe = await getStripe();
 
@@ -98,13 +99,8 @@ const Cart = () => {
             <div className="total">
               <h3>Subtotal:</h3>
               <h3><CurrencyFormat className="product-price" value={totalPrice} displayType="text" thousandSeparator={true} /> <u>vnđ</u></h3>        
-              <Image
-             // src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=test"
-             src="/images/logo.png"
-              alt="Trulli" 
-              width={170}
-              height={170}
-              />
+             
+              <Image loader={() => src} src={src} width={170} height={170}/>
             </div>
             <div className="btn-container">
               <Link href="/succes" class="btn">
